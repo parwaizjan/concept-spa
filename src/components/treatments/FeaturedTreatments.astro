@@ -36,8 +36,10 @@ const featured = items.filter((item) => item.featured);
                 class="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div class="p-3">
-                <div class="flex items-baseline justify-between gap-2">
-                  <span class="font-medium">{item.name}</span>
+                <div class="flex items-start justify-between gap-2">
+                  <span class="min-h-[2.6rem] font-medium leading-snug">
+                    {item.name}
+                  </span>
                   <span class="shrink-0 font-semibold tabular-nums">
                     {formatPrice(item.price)}
                   </span>

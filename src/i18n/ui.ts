@@ -42,8 +42,7 @@ const en = {
   "hero.eyebrow": "Massage · Facials · Body rituals · Colombo 07",
   "hero.cta": "Book on WhatsApp",
   "hero.treatments": "View treatments",
-  "hero.imageAlt":
-    "A calm treatment room at Lotus & Lime Wellness with soft daylight",
+  "hero.imageAlt": "A warm oil massage in progress at Lotus & Lime Wellness",
 
   "treatments.title": "Treatments",
   "treatments.subtitle":
@@ -66,12 +65,12 @@ const en = {
 
   "gallery.title": "The space",
   "gallery.subtitle": "A quiet escape in the heart of Colombo 07.",
-  "gallery.altRoom": "A sunlit spa lounge with soft seating",
-  "gallery.altTreatment": "A treatment bed prepared with fresh linens",
-  "gallery.altFacial": "A close-up of a soothing facial mask",
+  "gallery.altRoom": "A sunlit relaxation lounge",
+  "gallery.altTreatment": "A guest enjoying a warm stone massage",
+  "gallery.altFacial": "A soothing steam facial treatment",
   "gallery.altOils": "Bottles of massage and essential oils",
-  "gallery.altDetail": "Soft white towels in warm morning light",
-  "gallery.altTea": "A cup of herbal tea after a treatment",
+  "gallery.altDetail": "Fresh towels rolled and ready",
+  "gallery.altTea": "A cup of herbal tea with fresh leaves",
 
   "about.title": "Our story",
   "about.p1":

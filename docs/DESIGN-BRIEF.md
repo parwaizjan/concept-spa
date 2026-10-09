@@ -121,15 +121,21 @@ deferred (`AGENTS.md` §8). `robots.txt` is generated.
 All demo imagery is **licensed stock** from Unsplash (free for commercial use, no
 on-page attribution required), committed as **WebP** (≤ ~200 KB, ≤ ~1600 px). Keep a
 calm, natural, daylight spa look; no text, logos or watermarks; no clichéd or
-over-sexualised imagery (D-S11).
+over-sexualised imagery (D-S11). Free (non-Unsplash+) photos only — premium photos
+carry a visible "Unsplash+" watermark.
 
-| Slot                   | File                             | Size / ratio | Notes                                      |
-| ---------------------- | -------------------------------- | ------------ | ------------------------------------------ |
-| Hero (wide)            | `public/images/hero.webp`        | 1600×1000    | Calm treatment room, soft daylight         |
-| Hero (mobile)          | `public/images/hero-mobile.webp` | 1000×1333    | Portrait crop of the same scene            |
-| Open Graph             | `public/og.jpg`                  | 1200×630     | Spa room, room for the wordmark            |
-| Gallery ×6             | `src/assets/gallery/*.webp`      | 1200×900     | Room, treatment, facial, oils, towels, tea |
-| Featured treatments ×4 | `src/assets/treatments/*.webp`   | 1200×900     | Named after the treatment id               |
+A single **warm/earthy grade** (gentle matte lift, a slight warm channel shift,
+−5% saturation, +6% contrast) is applied to every demo image so the set reads as
+custom and cohesive rather than a stock grab-bag. Apply the same pass when replacing
+photos in a clone.
+
+| Slot                   | File                             | Size / ratio | Notes                                              |
+| ---------------------- | -------------------------------- | ------------ | -------------------------------------------------- |
+| Hero (wide)            | `public/images/hero.webp`        | 1600×1000    | Warm oil massage, treatment in progress            |
+| Hero (mobile)          | `public/images/hero-mobile.webp` | 1000×1333    | Portrait: treatment room in soft light             |
+| Open Graph             | `public/og.jpg`                  | 1200×630     | Warm stone massage, room for the wordmark          |
+| Gallery ×6             | `src/assets/gallery/*.webp`      | 1200×900     | Lounge, treatment, steam facial, oils, towels, tea |
+| Featured treatments ×4 | `src/assets/treatments/*.webp`   | 1200×900     | Named after the treatment id                       |
 
 Brand marks (`public/logo.svg`, `public/favicon.svg`) are simple SVGs made in-repo
 (jade rounded square, lotus petals, terracotta waterline). `placeholder.svg` is the
