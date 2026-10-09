@@ -42,7 +42,8 @@ const en = {
   "hero.eyebrow": "Massage · Facials · Body rituals · Colombo 07",
   "hero.cta": "Book on WhatsApp",
   "hero.treatments": "View treatments",
-  "hero.imageAlt": "A warm oil massage in progress at Lotus & Lime Wellness",
+  "hero.imageAlt":
+    "A warm herbal pouch massage in progress at Lotus & Lime Wellness",
 
   "treatments.title": "Treatments",
   "treatments.subtitle":
