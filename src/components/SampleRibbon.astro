@@ -1,0 +1,37 @@
+---
+import { site, type Locale } from "../data/site";
+import { buildWhatsAppUrl } from "../lib/whatsapp";
+import { buildBookingMessage } from "../lib/booking";
+import { useTranslations } from "../i18n/utils";
+import WhatsAppIcon from "./icons/WhatsAppIcon.astro";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// A generic enquiry so the demo ribbon always has a working WhatsApp link.
+const href = buildWhatsAppUrl(buildBookingMessage({ topic: "general" }, t));
+---
+
+{
+  site.showDemoRibbon && (
+    <div class="demo-ribbon">
+      <div class="container-page">
+        {t("ribbon.text")}
+        {" · "}
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1"
+        >
+          <WhatsAppIcon size={13} />
+          {t("common.messageUs")}
+        </a>
+      </div>
+    </div>
+  )
+}

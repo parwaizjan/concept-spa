@@ -1,0 +1,11 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 800 600"
+  role="img"
+  aria-label="Treatment image placeholder"
+>
+  <rect width="800" height="600" fill="#e9ede3" />
+  <path d="M400 210c22 34 22 73 0 105-22-32-22-71 0-105z" fill="#4c6b5b" />
+  <path d="M400 315c-34-4-60-30-64-64 34 4 60 30 64 64z" fill="#c9d4c2" />
+  <path d="M400 315c34-4 60-30 64-64-34 4-60 30-64 64z" fill="#c9d4c2" />
+</svg>

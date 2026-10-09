@@ -1,0 +1,68 @@
+---
+import { site, type Locale } from "../../data/site";
+import { useTranslations } from "../../i18n/utils";
+import { buildWhatsAppUrl } from "../../lib/whatsapp";
+import { buildBookingMessage } from "../../lib/booking";
+import WhatsAppIcon from "../icons/WhatsAppIcon.astro";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const tagline = site.tagline[lang] ?? site.tagline.en;
+const bookingUrl = buildWhatsAppUrl(buildBookingMessage({}, t));
+---
+
+<section class="relative overflow-hidden bg-surface-alt">
+  <div
+    class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="container-page grid items-center gap-8 py-12 lg:grid-cols-2 lg:gap-12 lg:py-16"
+  >
+    <div>
+      <span class="eyebrow">{t("hero.eyebrow")}</span>
+      <h1
+        class="mt-4 font-heading text-5xl leading-[1.0] sm:text-6xl xl:text-7xl"
+      >
+        {site.name}
+      </h1>
+      <p class="mt-5 max-w-lg text-lg text-text-muted sm:text-xl">{tagline}</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          <WhatsAppIcon size={18} />
+          {t("hero.cta")}
+        </a>
+        <a href="#treatments" class="btn btn-outline">{t("hero.treatments")}</a>
+      </div>
+      <p class="mt-6 text-sm text-text-muted">
+        {site.address[lang] ?? site.address.en}
+      </p>
+    </div>
+
+    <div class="relative">
+      <picture>
+        <source media="(max-width: 639px)" srcset={site.heroImageMobile} />
+        <img
+          src={site.heroImage}
+          alt={t("hero.imageAlt")}
+          width="1400"
+          height="1050"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          class="h-[38vh] w-full rounded-2xl border border-border object-cover sm:h-[48vh] lg:h-[68vh]"
+        />
+      </picture>
+    </div>
+  </div>
+</section>

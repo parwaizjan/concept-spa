@@ -1,0 +1,55 @@
+---
+import type { Locale } from "../../data/site";
+import type { TreatmentItem as TreatmentEntry } from "../../lib/treatments";
+import { formatPrice } from "../../lib/format";
+import { useTranslations } from "../../i18n/utils";
+import MediaImage from "../MediaImage.astro";
+
+interface Props {
+  items: TreatmentEntry[];
+  lang: Locale;
+}
+
+const { items, lang } = Astro.props;
+const t = useTranslations(lang);
+const featured = items.filter((item) => item.featured);
+---
+
+{
+  featured.length > 0 && (
+    <section class="container-page py-12">
+      <header class="mb-6">
+        <h2 class="font-heading text-3xl">{t("treatments.featuredTitle")}</h2>
+        <p class="mt-2 text-text-muted">{t("treatments.featuredSubtitle")}</p>
+      </header>
+      <ul class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        {featured.map((item) => (
+          <li>
+            <a
+              href={`#category-${item.category}`}
+              class="card group block h-full overflow-hidden"
+            >
+              <MediaImage
+                image={item.image}
+                alt={item.name}
+                sizes="(min-width: 1024px) 18rem, 45vw"
+                class="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div class="p-3">
+                <div class="flex items-baseline justify-between gap-2">
+                  <span class="font-medium">{item.name}</span>
+                  <span class="shrink-0 font-semibold tabular-nums">
+                    {formatPrice(item.price)}
+                  </span>
+                </div>
+                <p class="mt-0.5 text-xs uppercase tracking-wide text-accent">
+                  {item.duration} {t("common.minutes")}
+                </p>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

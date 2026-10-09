@@ -1,0 +1,133 @@
+---
+import { site, type Locale } from "../../data/site";
+import type { TreatmentItem as TreatmentEntry } from "../../lib/treatments";
+import { buildWhatsAppUrl } from "../../lib/whatsapp";
+import { buildBookingMessage } from "../../lib/booking";
+import { useTranslations } from "../../i18n/utils";
+import WhatsAppIcon from "../icons/WhatsAppIcon.astro";
+
+interface Props {
+  lang: Locale;
+  items: TreatmentEntry[];
+}
+
+const { lang, items } = Astro.props;
+const t = useTranslations(lang);
+
+const defaultHref = buildWhatsAppUrl(
+  buildBookingMessage({ topic: "general" }, t),
+);
+---
+
+<section id="booking" class="border-t border-border bg-surface py-14">
+  <div class="container-page max-w-2xl">
+    <h2 class="font-heading text-3xl sm:text-4xl">{t("booking.title")}</h2>
+    <p class="mt-2 text-text-muted">{t("booking.subtitle")}</p>
+
+    <form class="mt-6 space-y-4" data-booking-form>
+      <fieldset>
+        <legend class="text-sm font-medium">{t("booking.whatAbout")}</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {
+            site.booking.topics.map((topic, index) => (
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="topic"
+                  value={topic}
+                  checked={index === 0}
+                  class="peer sr-only"
+                />
+                <span class="inline-flex min-h-9 items-center rounded-full border border-border px-3 text-sm text-text-muted transition-colors peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary hover:border-primary">
+                  {t(`booking.topic.${topic}`)}
+                </span>
+              </label>
+            ))
+          }
+        </div>
+      </fieldset>
+
+      <div>
+        <label for="booking-treatment" class="text-sm font-medium">
+          {t("booking.treatment")}
+        </label>
+        <select
+          id="booking-treatment"
+          data-booking-treatment
+          class="input mt-1"
+        >
+          <option value="">{t("booking.treatmentPlaceholder")}</option>
+          {items.map((item) => <option value={item.name}>{item.name}</option>)}
+        </select>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="booking-date" class="text-sm font-medium">
+            {t("booking.date")}
+          </label>
+          <input
+            id="booking-date"
+            type="date"
+            data-booking-date
+            class="input mt-1"
+          />
+        </div>
+        <div>
+          <label for="booking-time" class="text-sm font-medium">
+            {t("booking.time")}
+          </label>
+          <input
+            id="booking-time"
+            type="text"
+            data-booking-time
+            placeholder={t("booking.timePlaceholder")}
+            class="input mt-1"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="booking-name" class="text-sm font-medium">
+          {t("msg.name")}
+        </label>
+        <input
+          id="booking-name"
+          type="text"
+          autocomplete="name"
+          data-booking-name
+          class="input mt-1"
+        />
+      </div>
+
+      <div>
+        <label for="booking-note" class="text-sm font-medium">
+          {t("booking.note")}
+        </label>
+        <textarea
+          id="booking-note"
+          rows="3"
+          data-booking-note
+          placeholder={t("booking.notePlaceholder")}
+          class="input mt-1"></textarea>
+      </div>
+
+      <a
+        data-booking-send
+        href={defaultHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary w-full sm:w-auto"
+      >
+        <WhatsAppIcon size={18} />
+        {t("booking.send")}
+      </a>
+      <p class="text-xs text-text-muted">{t("footer.note")}</p>
+    </form>
+
+    <div class="mt-8 rounded-lg border border-border bg-bg p-4">
+      <h3 class="font-heading text-lg">{t("addOns.title")}</h3>
+      <p class="mt-1 text-sm text-text-muted">{t("addOns.body")}</p>
+    </div>
+  </div>
+</section>

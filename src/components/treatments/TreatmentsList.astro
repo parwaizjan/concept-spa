@@ -1,0 +1,62 @@
+---
+import type { Locale } from "../../data/site";
+import type {
+  TreatmentCategory,
+  TreatmentItem as TreatmentEntry,
+} from "../../lib/treatments";
+import { useTranslations } from "../../i18n/utils";
+import TreatmentTabs from "./TreatmentTabs.astro";
+import TreatmentItem from "./TreatmentItem.astro";
+
+interface Props {
+  categories: TreatmentCategory[];
+  items: TreatmentEntry[];
+  lang: Locale;
+  heading?: "h1" | "h2";
+}
+
+const { categories, items, lang, heading = "h2" } = Astro.props;
+const t = useTranslations(lang);
+const Heading = heading;
+---
+
+<section id="treatments" class="container-page max-w-4xl py-12">
+  <header class="mb-4">
+    <Heading class="font-heading text-4xl">{t("treatments.title")}</Heading>
+    <p class="mt-2 text-text-muted">{t("treatments.subtitle")}</p>
+  </header>
+
+  <TreatmentTabs categories={categories} lang={lang} />
+
+  {
+    items.length === 0 ? (
+      <p class="mt-8 text-text-muted">{t("treatments.empty")}</p>
+    ) : (
+      <div class="mt-2">
+        {categories.map((category) => {
+          const group = items.filter((item) => item.category === category.id);
+          if (group.length === 0) return null;
+          return (
+            <section
+              id={`category-${category.id}`}
+              data-category-section={category.id}
+              class="scroll-mt-40 pt-10 md:scroll-mt-32"
+            >
+              <h2 class="font-heading text-2xl">{category.name}</h2>
+              {category.description && (
+                <p class="mt-1 text-sm text-text-muted">
+                  {category.description}
+                </p>
+              )}
+              <ul class="mt-2 divide-y divide-border">
+                {group.map((item) => (
+                  <TreatmentItem item={item} lang={lang} />
+                ))}
+              </ul>
+            </section>
+          );
+        })}
+      </div>
+    )
+  }
+</section>

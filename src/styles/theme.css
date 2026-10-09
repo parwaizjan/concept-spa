@@ -1,0 +1,94 @@
+/*
+ * Design tokens.
+ *
+ * `@theme inline` maps Tailwind utilities onto the runtime CSS variables below, so
+ * a clone rebrands by editing the variable values (and preset overrides) only.
+ * See docs/DESIGN-BRIEF.md.
+ */
+
+@theme inline {
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-surface-alt: var(--c-surface-alt);
+  --color-text: var(--c-text);
+  --color-text-muted: var(--c-text-muted);
+  --color-primary: var(--c-primary);
+  --color-primary-strong: var(--c-primary-strong);
+  --color-on-primary: var(--c-on-primary);
+  --color-accent: var(--c-accent);
+  --color-border: var(--c-border);
+  --color-success: var(--c-success);
+  --color-danger: var(--c-danger);
+  --color-focus: var(--c-focus);
+  --color-whatsapp: var(--c-whatsapp);
+
+  --font-heading: var(--font-heading-family);
+  --font-body: var(--font-body-family);
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+
+  --shadow-soft:
+    0 1px 2px rgb(38 42 36 / 0.06), 0 10px 30px rgb(38 42 36 / 0.08);
+}
+
+/* Default preset: Lotus & Lime Wellness (warm sand + soft jade + terracotta). */
+:root {
+  color-scheme: light;
+  --c-bg: #f4f1ea;
+  --c-surface: #ffffff;
+  --c-surface-alt: #e9ede3;
+  --c-text: #2b2f2a;
+  --c-text-muted: #6e7369;
+  --c-primary: #4c6b5b;
+  --c-primary-strong: #3c5749;
+  --c-on-primary: #f7f5ef;
+  --c-accent: #b5714b;
+  --c-border: #ddd8cb;
+  --c-success: #4e7d5e;
+  --c-danger: #b2463a;
+  --c-focus: #1d4ed8;
+  --c-whatsapp: #25d366;
+
+  --font-heading-family:
+    "Cormorant", "Noto Serif Sinhala", "Noto Serif Tamil", Georgia, serif;
+  --font-body-family:
+    "Manrope", "Noto Sans Sinhala", "Noto Sans Tamil", system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+}
+
+/* Alternate presets (pitch variety). Apply with <html data-theme="...">. */
+[data-theme="terracotta"] {
+  color-scheme: light;
+  --c-bg: #faf4f0;
+  --c-surface: #ffffff;
+  --c-surface-alt: #f2e4dc;
+  --c-text: #2f2722;
+  --c-text-muted: #7c6a60;
+  --c-primary: #b5714b;
+  --c-primary-strong: #9a5b39;
+  --c-on-primary: #fffaf6;
+  --c-accent: #5f7a6a;
+  --c-border: #e8d9cf;
+  --c-success: #4e7d5e;
+  --c-danger: #b2463a;
+  --c-focus: #1d4ed8;
+}
+
+[data-theme="indigo"] {
+  color-scheme: dark;
+  --c-bg: #171c21;
+  --c-surface: #1f262c;
+  --c-surface-alt: #273038;
+  --c-text: #eef1ee;
+  --c-text-muted: #a9b2ad;
+  --c-primary: #8fb7a3;
+  --c-primary-strong: #79a48f;
+  --c-on-primary: #171c21;
+  --c-accent: #d09a76;
+  --c-border: #313b43;
+  --c-success: #7fbe92;
+  --c-danger: #e08a7d;
+  --c-focus: #93c5fd;
+}

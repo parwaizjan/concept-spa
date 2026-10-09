@@ -1,0 +1,39 @@
+---
+import type { Locale } from "../../data/site";
+import { useTranslations } from "../../i18n/utils";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const steps = [
+  { title: "expect.step1.title", body: "expect.step1.body" },
+  { title: "expect.step2.title", body: "expect.step2.body" },
+  { title: "expect.step3.title", body: "expect.step3.body" },
+  { title: "expect.step4.title", body: "expect.step4.body" },
+] as const;
+---
+
+<section id="expect" class="container-page py-12">
+  <header class="mb-8 max-w-2xl">
+    <h2 class="font-heading text-3xl">{t("expect.title")}</h2>
+    <p class="mt-2 text-text-muted">{t("expect.subtitle")}</p>
+  </header>
+
+  <ol class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      steps.map((step, index) => (
+        <li class="card flex h-full flex-col p-5">
+          <span class="font-heading text-3xl text-primary/40">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <h3 class="mt-2 font-heading text-xl">{t(step.title)}</h3>
+          <p class="mt-2 text-sm text-text-muted">{t(step.body)}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

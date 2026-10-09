@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SpaHero from "../hero/SpaHero.astro";
+import FeaturedTreatments from "../treatments/FeaturedTreatments.astro";
+import TreatmentsList from "../treatments/TreatmentsList.astro";
+import PackagesList from "../packages/PackagesList.astro";
+import GalleryGrid from "../gallery/GalleryGrid.astro";
+import AboutStory from "../about/AboutStory.astro";
+import HowItWorks from "../expect/HowItWorks.astro";
+import Reviews from "../reviews/Reviews.astro";
+import LocationSection from "../visit/LocationSection.astro";
+import BookingSection from "../booking/BookingSection.astro";
+import GiftVouchers from "../gift/GiftVouchers.astro";
+import type { Locale } from "../../data/site";
+import { getCategories, getTreatments } from "../../lib/treatments";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const [items, categories] = await Promise.all([
+  getTreatments(lang),
+  getCategories(lang),
+]);
+---
+
+<BaseLayout lang={lang} path="/">
+  <SpaHero lang={lang} />
+  <FeaturedTreatments items={items} lang={lang} />
+  <TreatmentsList categories={categories} items={items} lang={lang} />
+  <PackagesList lang={lang} />
+  <GalleryGrid lang={lang} />
+  <AboutStory lang={lang} />
+  <HowItWorks lang={lang} />
+  <Reviews lang={lang} />
+  <LocationSection lang={lang} />
+  <BookingSection items={items} lang={lang} />
+  <GiftVouchers lang={lang} />
+</BaseLayout>
