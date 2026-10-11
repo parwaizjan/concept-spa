@@ -67,7 +67,7 @@ const en = {
   "gallery.title": "The space",
   "gallery.subtitle": "A quiet escape in the heart of Colombo 07.",
   "gallery.altRoom": "A sunlit relaxation lounge",
-  "gallery.altTreatment": "A guest enjoying a warm stone massage",
+  "gallery.altTreatment": "A treatment room prepared with warm stones and oils",
   "gallery.altFacial": "A soothing steam facial treatment",
   "gallery.altOils": "Bottles of massage and essential oils",
   "gallery.altDetail": "Fresh towels rolled and ready",
