@@ -22,6 +22,11 @@
   --color-focus: var(--c-focus);
   --color-whatsapp: var(--c-whatsapp);
 
+  /* Single deep accent section (see DESIGN-BRIEF). */
+  --color-deep: var(--c-deep);
+  --color-on-deep: var(--c-on-deep);
+  --color-on-deep-muted: var(--c-on-deep-muted);
+
   --font-heading: var(--font-heading-family);
   --font-body: var(--font-body-family);
 
@@ -40,12 +45,17 @@
   --c-surface: #ffffff;
   --c-surface-alt: #e9ede3;
   --c-text: #2b2f2a;
-  --c-text-muted: #6e7369;
+  --c-text-muted: #5f6459;
   --c-primary: #4c6b5b;
   --c-primary-strong: #3c5749;
   --c-on-primary: #f7f5ef;
-  --c-accent: #b5714b;
+  --c-accent: #9a5a36;
   --c-border: #ddd8cb;
+
+  /* The one deep section (booking). */
+  --c-deep: var(--c-primary-strong);
+  --c-on-deep: var(--c-on-primary);
+  --c-on-deep-muted: #cfd6d0;
   --c-success: #4e7d5e;
   --c-danger: #b2463a;
   --c-focus: #1d4ed8;

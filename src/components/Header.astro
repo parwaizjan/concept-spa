@@ -28,6 +28,12 @@ const anchor = (hash: string) => `${home}${hash}`;
 const linkClass =
   "inline-flex min-h-9 items-center whitespace-nowrap rounded-full px-3 text-sm font-medium text-text-muted hover:bg-surface-alt hover:text-text";
 
+// Mobile keeps a compact, non-scrolling row: drop "About" (still in the footer)
+// and tighten padding so every chip fits without clipping at 375px.
+const mobileLinks = links.filter((link) => link.key !== "nav.about");
+const mobileLinkClass =
+  "inline-flex min-h-9 items-center whitespace-nowrap rounded-full px-2.5 text-sm font-medium text-text-muted hover:bg-surface-alt hover:text-text";
+
 const bookingUrl = buildWhatsAppUrl(buildBookingMessage({}, t));
 ---
 
@@ -71,9 +77,9 @@ const bookingUrl = buildWhatsAppUrl(buildBookingMessage({}, t));
   <nav class="container-page lg:hidden" aria-label={t("nav.treatments")}>
     <ul class="no-scrollbar flex gap-1 overflow-x-auto py-1.5">
       {
-        links.map((link) => (
+        mobileLinks.map((link) => (
           <li>
-            <a href={anchor(link.href)} class={linkClass}>
+            <a href={anchor(link.href)} class={mobileLinkClass}>
               {t(link.key)}
             </a>
           </li>

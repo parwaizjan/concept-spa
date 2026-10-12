@@ -39,7 +39,7 @@ const socials = Object.entries(site.socials).filter(([, url]) => url);
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="underline"
+                  class="link capitalize"
                 >
                   {name}
                 </a>
@@ -91,16 +91,16 @@ const socials = Object.entries(site.socials).filter(([, url]) => url);
           href={bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 font-medium text-primary underline"
+          class="inline-flex items-center gap-1.5 font-medium"
         >
           <WhatsAppIcon class="text-whatsapp" size={14} />
-          {t("common.bookWhatsApp")}
+          <span class="link">{t("common.bookWhatsApp")}</span>
         </a>
         <a
           href={directions}
           target="_blank"
           rel="noopener noreferrer"
-          class="underline"
+          class="link"
         >
           {t("common.getDirections")}
         </a>

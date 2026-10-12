@@ -19,10 +19,10 @@ const defaultHref = buildWhatsAppUrl(
 );
 ---
 
-<section id="booking" class="border-t border-border bg-surface py-14">
+<section id="booking" class="border-t border-border bg-deep py-14 text-on-deep">
   <div class="container-page max-w-2xl">
     <h2 class="font-heading text-3xl sm:text-4xl">{t("booking.title")}</h2>
-    <p class="mt-2 text-text-muted">{t("booking.subtitle")}</p>
+    <p class="mt-2 text-on-deep-muted">{t("booking.subtitle")}</p>
 
     <form class="mt-6 space-y-4" data-booking-form>
       <fieldset>
@@ -38,7 +38,7 @@ const defaultHref = buildWhatsAppUrl(
                   checked={index === 0}
                   class="peer sr-only"
                 />
-                <span class="inline-flex min-h-9 items-center rounded-full border border-border px-3 text-sm text-text-muted transition-colors peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary hover:border-primary">
+                <span class="inline-flex min-h-9 items-center rounded-full border border-white/30 px-3 text-sm text-on-deep-muted transition-colors peer-checked:border-transparent peer-checked:bg-on-deep peer-checked:text-primary-strong hover:border-white/60">
                   {t(`booking.topic.${topic}`)}
                 </span>
               </label>
@@ -61,30 +61,35 @@ const defaultHref = buildWhatsAppUrl(
         </select>
       </div>
 
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label for="booking-date" class="text-sm font-medium">
-            {t("booking.date")}
-          </label>
-          <input
-            id="booking-date"
-            type="date"
-            data-booking-date
-            class="input mt-1"
-          />
+      <div class="space-y-2">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="booking-date" class="text-sm font-medium">
+              {t("booking.date")}
+            </label>
+            <input
+              id="booking-date"
+              type="text"
+              autocomplete="off"
+              data-booking-date
+              placeholder={t("booking.datePlaceholder")}
+              class="input mt-1"
+            />
+          </div>
+          <div>
+            <label for="booking-time" class="text-sm font-medium">
+              {t("booking.time")}
+            </label>
+            <input
+              id="booking-time"
+              type="text"
+              data-booking-time
+              placeholder={t("booking.timePlaceholder")}
+              class="input mt-1"
+            />
+          </div>
         </div>
-        <div>
-          <label for="booking-time" class="text-sm font-medium">
-            {t("booking.time")}
-          </label>
-          <input
-            id="booking-time"
-            type="text"
-            data-booking-time
-            placeholder={t("booking.timePlaceholder")}
-            class="input mt-1"
-          />
-        </div>
+        <p class="text-xs text-on-deep-muted">{t("booking.scheduleNote")}</p>
       </div>
 
       <div>
@@ -117,17 +122,17 @@ const defaultHref = buildWhatsAppUrl(
         href={defaultHref}
         target="_blank"
         rel="noopener noreferrer"
-        class="btn btn-primary w-full sm:w-auto"
+        class="btn btn-light w-full sm:w-auto"
       >
         <WhatsAppIcon size={18} />
         {t("booking.send")}
       </a>
-      <p class="text-xs text-text-muted">{t("footer.note")}</p>
+      <p class="text-xs text-on-deep-muted">{t("footer.note")}</p>
     </form>
 
-    <div class="mt-8 rounded-lg border border-border bg-bg p-4">
+    <div class="mt-8 rounded-lg border border-white/15 bg-white/5 p-4">
       <h3 class="font-heading text-lg">{t("addOns.title")}</h3>
-      <p class="mt-1 text-sm text-text-muted">{t("addOns.body")}</p>
+      <p class="mt-1 text-sm text-on-deep-muted">{t("addOns.body")}</p>
     </div>
   </div>
 </section>

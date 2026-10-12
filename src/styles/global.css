@@ -127,9 +127,43 @@
     background-color: #1eb356;
   }
 
+  /* Inverse (light) button for the single deep section. */
+  .btn-light {
+    background-color: var(--c-on-deep);
+    color: var(--c-primary-strong);
+  }
+
+  .btn-light:hover {
+    background-color: #ffffff;
+  }
+
   .btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  /* Consistent inline-link treatment: accent colour, soft underline that
+     strengthens on hover. Replaces the browser's default link styling. */
+  .link {
+    color: var(--c-accent);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: color-mix(in srgb, var(--c-accent) 45%, transparent);
+    transition:
+      color 0.15s ease,
+      text-decoration-color 0.15s ease;
+  }
+
+  .link:hover {
+    color: var(--c-primary-strong);
+    text-decoration-color: currentColor;
+  }
+
+  /* Soften the embedded map so it sits within the warm palette. */
+  .map-soft {
+    filter: grayscale(0.2) sepia(0.14) saturate(1.08) contrast(0.94)
+      brightness(1.02);
   }
 
   .card {

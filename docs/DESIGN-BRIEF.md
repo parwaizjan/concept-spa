@@ -30,22 +30,31 @@ Edit `src/styles/theme.css` to rebrand; `global.css` maps tokens to Tailwind.
 | `--c-surface`        | `#FFFFFF` | Cards / raised panels            |
 | `--c-surface-alt`    | `#E9EDE3` | Soft sage section background     |
 | `--c-text`           | `#2B2F2A` | Primary text (deep stone black)  |
-| `--c-text-muted`     | `#6E7369` | Secondary text                   |
+| `--c-text-muted`     | `#5F6459` | Secondary text (WCAG AA on bg)   |
 | `--c-primary`        | `#4C6B5B` | Soft jade — buttons              |
 | `--c-primary-strong` | `#3C5749` | Primary hover                    |
 | `--c-on-primary`     | `#F7F5EF` | Text on primary                  |
-| `--c-accent`         | `#B5714B` | Muted terracotta — eyebrows/tags |
+| `--c-accent`         | `#9A5A36` | Terracotta — eyebrows/links (AA) |
 | `--c-border`         | `#DDD8CB` | Hairline borders                 |
 | `--c-success`        | `#4E7D5E` | Open now / available             |
 | `--c-danger`         | `#B2463A` | Closed / error                   |
 | `--c-focus`          | `#1D4ED8` | Focus ring                       |
+| `--c-deep`           | `#3C5749` | The one deep anchor section      |
+| `--c-on-deep`        | `#F7F5EF` | Text on the deep section         |
+| `--c-on-deep-muted`  | `#CFD6D0` | Secondary text on the deep band  |
+
+Two contrast nudges were applied for AA: `--c-text-muted` (`#6E7369`→`#5F6459`)
+and `--c-accent` (`#B5714B`→`#9A5A36`). **Request a booking** is the single deep
+section (`bg-deep text-on-deep`) — a deliberate dark anchor, not a dark theme.
 
 - Radius: `--radius-sm 6px`, `--radius-md 12px`, `--radius-lg 20px`.
 - Type: `font-heading` **Cormorant**, `font-body` **Manrope**, both stacks append
   Noto Sans Sinhala/Tamil.
-- Utilities/classes: `bg-bg bg-surface text-text text-text-muted border-border
-bg-primary bg-accent`, plus `.eyebrow .btn .btn-primary .btn-outline .card .badge
-.input .price-leader .section .container-page`.
+- Utilities/classes: `bg-bg bg-surface bg-deep text-text text-text-muted
+text-on-deep-muted border-border bg-primary bg-accent`, plus `.eyebrow .btn
+.btn-primary .btn-outline .btn-light .link .card .badge .input .price-leader
+.section .container-page .map-soft`. Inline links use `.link` (accent colour,
+  soft underline) rather than the browser default.
 - Light theme is default. Clone presets live in `theme.css` under `data-theme`
   (`terracotta`, `indigo`).
 
@@ -53,20 +62,20 @@ bg-primary bg-accent`, plus `.eyebrow .btn .btn-primary .btn-outline .card .badg
 
 One route (`/`) with anchored sections so the whole spa is scannable on a phone:
 
-| #   | Section              | Anchor           | Job                                                                    |
-| --- | -------------------- | ---------------- | ---------------------------------------------------------------------- |
-| 1   | Hero                 | —                | Calm image, name, tagline, **Book on WhatsApp** + **View treatments**. |
-| 2   | Signature treatments | `#treatments`    | Featured treatments with photos.                                       |
-| 3   | Treatments           | `#treatments`    | Full menu by category with **durations + prices** and enquire links.   |
-| 4   | Packages             | `#packages`      | Curated multi-treatment packages.                                      |
-| 5   | Gallery              | `#gallery`       | The space and treatments — the trust signal.                           |
-| 6   | Our story            | `#about`         | About the spa and its values.                                          |
-| 7   | What to expect       | `#expect`        | Four-step "how it works".                                              |
-| 8   | Reviews              | `#reviews`       | Short invented quotes (no rating badge).                               |
-| 9   | Visit us             | `#visit`         | Address, hours, embedded map, one-tap directions.                      |
-| 10  | Request a booking    | `#booking`       | WhatsApp enquiry form + add-ons hint.                                  |
-| 11  | Gift vouchers        | `#gift-vouchers` | Add-on hint.                                                           |
-| 12  | Footer               | —                | Brand, anchors, socials, hours/address, Book on WhatsApp.              |
+| #   | Section              | Anchor           | Job                                                                                |
+| --- | -------------------- | ---------------- | ---------------------------------------------------------------------------------- |
+| 1   | Hero                 | —                | Calm image, name, tagline, **Book on WhatsApp** + **View treatments**, trust cues. |
+| 2   | Signature treatments | `#treatments`    | Featured treatments with photos.                                                   |
+| 3   | Treatments           | `#treatments`    | Full menu by category with **durations + prices** and enquire links.               |
+| 4   | Packages             | `#packages`      | Curated multi-treatment packages.                                                  |
+| 5   | Gallery              | `#gallery`       | The space and treatments — the trust signal.                                       |
+| 6   | Our story            | `#about`         | About the spa and its values.                                                      |
+| 7   | What to expect       | `#expect`        | Four-step "how it works".                                                          |
+| 8   | Reviews              | `#reviews`       | Short invented quotes (no rating badge).                                           |
+| 9   | Visit us             | `#visit`         | Address, hours, embedded map, one-tap directions.                                  |
+| 10  | Request a booking    | `#booking`       | WhatsApp enquiry form + add-ons hint. The **deep-jade** anchor band.               |
+| 11  | Gift vouchers        | `#gift-vouchers` | Add-on hint.                                                                       |
+| 12  | Footer               | —                | Brand, anchors, socials, hours/address, Book on WhatsApp.                          |
 
 There is no `/menu`, `/treatments`, `/gallery` or `/about` route. Legal pages are
 deferred (`AGENTS.md` §8). `robots.txt` is generated.

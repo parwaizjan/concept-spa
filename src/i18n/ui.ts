@@ -42,6 +42,8 @@ const en = {
   "hero.eyebrow": "Massage · Facials · Body rituals · Colombo 07",
   "hero.cta": "Book on WhatsApp",
   "hero.treatments": "View treatments",
+  "hero.trust1": "Qualified Ayurvedic therapists",
+  "hero.trust2": "Private treatment rooms",
   "hero.imageAlt":
     "A warm herbal pouch massage in progress at Lotus & Lime Wellness",
 
@@ -120,8 +122,11 @@ const en = {
   "booking.treatment": "Treatment",
   "booking.treatmentPlaceholder": "Not sure yet",
   "booking.date": "Preferred date",
+  "booking.datePlaceholder": "e.g. 18/10/2026",
   "booking.time": "Preferred time",
   "booking.timePlaceholder": "e.g. morning, or 3pm",
+  "booking.scheduleNote":
+    "Date and time are flexible — we'll confirm the exact slot on WhatsApp.",
   "booking.note": "Anything we should know?",
   "booking.notePlaceholder":
     "Optional — how many people, any injuries or preferences…",
