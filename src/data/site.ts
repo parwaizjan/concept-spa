@@ -111,6 +111,12 @@ export const site = {
   indexable: false,
   /** Demo-only "sample website" ribbon above the header. */
   showDemoRibbon: true,
+  /**
+   * Prefix added to every visitor-facing WhatsApp enquiry so the studio can
+   * tell demo traffic apart. Set to "" in a real clone. The ribbon's
+   * website-enquiry link is deliberately left untagged.
+   */
+  demoTag: "[DEMO: Spa] ",
   siteUrl: "https://demo-spa.zuvo.lk",
   currency: { code: "LKR", symbol: "Rs." },
   priceRange: "Rs. 4,500–16,500",

@@ -57,7 +57,8 @@ Point `prices.sheetId` at the spa's own Google Sheet (see
 2. Delete the `X-Robots-Tag: noindex, nofollow` line from `public/_headers`.
 3. Set `siteUrl` to the real domain.
 
-Also set `showDemoRibbon: false`.
+Also set `showDemoRibbon: false` and `demoTag: ""` (so visitor WhatsApp
+enquiries are no longer prefixed with the demo tag).
 
 ## 8. Build & deploy
 
@@ -82,5 +83,6 @@ Rename the Worker in `wrangler.jsonc` and attach the spa's custom domain
 
 ## Do not leave behind
 
-Placeholder branding, the demo phone number, the demo ribbon, `indexable: false`,
-`sheetId: ""`, or treatment ids that no longer match the Sheet.
+Placeholder branding, the demo phone number, the demo ribbon, the `demoTag`
+prefix, `indexable: false`, `sheetId: ""`, or treatment ids that no longer match
+the Sheet.

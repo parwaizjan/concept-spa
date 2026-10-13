@@ -1,4 +1,4 @@
-import type { BookingTopic } from "../data/site";
+import { site, type BookingTopic } from "../data/site";
 import type { UiKey } from "../i18n/ui";
 
 /**
@@ -20,7 +20,8 @@ export function buildBookingMessage(
   details: BookingDetails,
   t: (key: UiKey) => string,
 ): string {
-  const lines: string[] = [t("msg.intro"), ""];
+  // Every visitor-facing enquiry is tagged for the demo (empty in a real clone).
+  const lines: string[] = [`${site.demoTag}${t("msg.intro")}`, ""];
 
   if (details.topic) {
     lines.push(

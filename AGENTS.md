@@ -184,7 +184,7 @@ checklist lives in `docs/CUSTOMIZATION.md`. Summary:
 3. Edit `src/data/site.ts` end to end (name, contacts, geo, colors, locales,
    `indexable`). For a real spa set `indexable: true` **and** delete the
    `X-Robots-Tag` line from `public/_headers`, and set `siteUrl` to the real
-   domain — all three. Also set `showDemoRibbon: false`.
+   domain — all three. Also set `showDemoRibbon: false` and `demoTag: ""`.
 4. Replace `public/logo.svg`, `public/favicon.svg`, the hero/OG images and the
    gallery/treatment photos.
 5. Update content: categories, treatments, packages and reviews.
