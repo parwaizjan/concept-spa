@@ -37,9 +37,9 @@ const en = {
   "common.minutes": "min",
   "common.from": "from",
 
-  "ribbon.text": "Sample website — a demo by Zuvo Web Studio Express",
+  "ribbon.text": "Sample website — a demo by Zuvo Web Studio",
   "ribbon.enquiry":
-    "Hi Zuvo Web Studio Express, I'd like a website like the {name} demo for my shop.",
+    "Hi Zuvo Web Studio, I'd like a website like the {name} demo for my shop.",
 
   "hero.eyebrow": "Massage · Facials · Body rituals · Colombo 07",
   "hero.cta": "Book on WhatsApp",

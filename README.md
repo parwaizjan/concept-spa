@@ -4,7 +4,7 @@ A tranquil, mobile-first, translation-ready website template for small Sri Lanka
 **spas and wellness studios**. It presents treatments and packages beautifully
 (durations + prices) and turns interest into a **WhatsApp booking enquiry**.
 
-This is a **concept/demo** for [Zuvo Web Studio Express](https://express.zuvo.lk),
+This is a **concept/demo** for [Zuvo Web Studio](https://zuvo.lk),
 and the template we clone for paying spa clients.
 
 - Demo: <https://demo-spa.zuvo.lk>

@@ -24,12 +24,12 @@ cost**, not for one-off bespoke work.
 - Demo site: `https://demo-spa.zuvo.lk`
 - Hosting: Cloudflare Workers, custom domain via `*.zuvo.lk`
 - Source: private GitHub repo (`parwaizjan/concept-spa`)
-- Catalogue: listed on `express.zuvo.lk` (see `docs/EXPRESS-HANDOFF.md`)
+- Catalogue: listed on `zuvo.lk` (see `docs/EXPRESS-HANDOFF.md`)
 - Target market: Sri Lankan day spas, wellness centres and beauty studios
 - Languages: **English first**, with first-class Sinhala (`si`) and Tamil (`ta`)
   structure already in place (see rule §3.6)
 
-This is the sixth entry in the Zuvo Web Studio Express concept series, after
+This is the sixth entry in the Zuvo Web Studio concept series, after
 `concept-laundry-shop`, `concept-bakery`, `concept-salon`, `concept-restaurant`
 and `concept-cafe`. It ports `concept-cafe`'s structure and toolchain (see
 `docs/DECISIONS.md` D-S01) but must look and feel **clearly distinct** from every
@@ -102,7 +102,7 @@ human instruction recorded in this file.
     regardless of indexability.
 11. **The demo carries a "sample website" note.** A slim, non-dismissible,
     brand-tinted ribbon sits above the header on every page: "Sample website — a
-    demo by Zuvo Web Studio Express" with an optional "Message us" link. This is a
+    demo by Zuvo Web Studio" with an optional "Message us" link. This is a
     deliberate honesty/rights signal (stock imagery, invented brand) and must not
     be removed from the demo. A real clone removes it.
 12. **Visually distinct from the other concepts.** The layout, section order and
@@ -210,8 +210,8 @@ Track unresolved decisions here so agents do not silently pick one:
   whether clones need them (especially if analytics are enabled).
 - **Translations.** Sinhala/Tamil content will be supplied later. Decide whether
   treatment names come from the Sheet, the content collections, or both.
-- **Screenshot for express.** `public/demos/spa.webp` must be captured for
-  `express.zuvo.lk` once the demo is live. See `docs/EXPRESS-HANDOFF.md`.
+- **Screenshot for zuvo.lk.** `public/demos/spa.webp` must be captured for
+  `zuvo.lk` once the demo is live. See `docs/EXPRESS-HANDOFF.md`.
 - **Native-speaker review** of Sinhala/Tamil strings before pitching, once enabled.
 
 When you resolve one of these, move the decision into `docs/DECISIONS.md` and leave
@@ -233,5 +233,5 @@ a short note here.
 - `docs/CLIENT-CHECKLIST.md` — client-facing intake list and WhatsApp message; keep
   it free of developer jargon and credentials.
 - `docs/DEPLOYMENT.md` — Cloudflare Workers, domain, GitHub, indexing headers.
-- `docs/EXPRESS-HANDOFF.md` — what the express.zuvo.lk repo must change to list this
+- `docs/EXPRESS-HANDOFF.md` — what the zuvo.lk repo must change to list this
   demo.
